@@ -10,3 +10,8 @@
 // Extra Bonus
 // Have the function be case insensitive
 // Have it ignore non alphabetic characters ' " ! ? ,
+function palindrome(str) {
+  return str === str.split('').reverse().join('');
+}
+
+console.log(palindrome('dsadasd'));
