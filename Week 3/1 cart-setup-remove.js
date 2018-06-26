@@ -9,7 +9,17 @@
 // the item from the cart with the matching id, also make sure to account for if
 // the id that is passed in that is not found.
 
-[
+class Cart {
+  constructor(items) {
+    this.cart = items;
+  }
+
+  removeItem(id) {
+    this.cart = this.cart.filter(item => item.id !== id);
+  }
+}
+
+let sampleCart = [
   {
     id: 1,
     product: 'Bob Ross Paint Kit',
@@ -29,3 +39,10 @@
     quantity: 2,
   },
 ];
+
+let c = new Cart(sampleCart);
+console.log(c.cart);
+console.log('remove id 2');
+c.removeItem(2);
+console.log(c.cart);
+
